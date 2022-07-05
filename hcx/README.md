@@ -13,4 +13,7 @@ HCX README.md
 
 ![5 Public Google Drive Image](https://drive.google.com/file/d/1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc/preview)
 
+![6 Public Google Drive Image](http://drive.google.com/uc?export=view&id=1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc)
+
+
 [Go Back](../README.md)
