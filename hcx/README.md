@@ -1,19 +1,8 @@
 HCX README.md
-![AVS HCX Get Started](avs-hcx-getstarted.png)
 
-[Private Google Drive Image](https://drive.google.com/file/d/1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc/view?usp=sharing)
+![PNG AVS HCX Get Started](http://drive.google.com/uc?export=view&id=1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc)
 
-![1 Public Google Drive Image](https://drive.google.com/drive/folders/13cebhjLwbRXxMTWLFkmhelaourBv7607)
-
-![2 Public Google Drive Image](https://drive.google.com/uc?export=view&id=13cebhjLwbRXxMTWLFkmhelaourBv7607)
-
-![3 Public Google Drive Image](https://drive.google.com/drive/folders/13cebhjLwbRXxMTWLFkmhelaourBv7607/preview)
-
-![4 Public Google Drive Image](https://drive.google.com/file/d/1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc/view?usp=sharing)
-
-![5 Public Google Drive Image](https://drive.google.com/file/d/1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc/preview)
-
-![6 Public Google Drive Image](http://drive.google.com/uc?export=view&id=1iW-YBRhi1n6PIW_XEJEnhww-NXSClMbc)
+![JPEG AVS HCX Get Started](http://drive.google.com/uc?export=view&id=1qAsoSWs-zfa58vaTos1JfQBWkP3XilPg)
 
 
 [Go Back](../README.md)
