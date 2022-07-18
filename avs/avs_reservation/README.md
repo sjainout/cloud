@@ -25,7 +25,9 @@ Azure AVS Reserved Instance [Documentation](https://docs.microsoft.com/en-us/azu
 3. Go to 'Reservation' page on Azure Portal 
 	1. One method is to go to search bar and type in ‘Reservation’
 4. Select 'Purchase'
-5. ![Select 'Azure VMware Solution'](http://drive.google.com/uc?export=view&id=13cebhjLwbRXxMTWLFkmhelaourBv7607)
+5. Select 'Azure VMware Solution'
+![Select 'Azure VMware Solution'](http://drive.google.com/uc?export=view&id=1hBjA-ID8B4us0nXyc-sPQP1-tPdoFsrV)
+
 6. Leave scope to default value of 'shared'
 7. Set 'Billing subscription' ID to same as AVS's subscription
 8. Set 'Region'
