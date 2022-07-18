@@ -33,8 +33,11 @@ Azure AVS Reserved Instance [Documentation](https://docs.microsoft.com/en-us/azu
 8. Set 'Region'
 9. Set 'Term'
 10. Set 'Billing frequency'
-11. Select 'Row' and 'Add to cart'
 ![avs-ri-2.jpeg Set Filters](http://drive.google.com/uc?export=view&id=1_zOGCTa91BXeCl0uXQv0Oyohppiz3qg5)
+
+
+11. Select 'Row' and 'Add to cart'
+![avs-ri-3.jpeg Set Filters](http://drive.google.com/uc?export=view&id=1LLaVXf1zV6D4-E4_mXVBNWu25mVjpKNf)
 
 12. Select 'Review + Buy'
 13. Review intermediate reservation state (Pending)
