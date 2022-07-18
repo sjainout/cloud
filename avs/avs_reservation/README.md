@@ -40,8 +40,7 @@ Azure AVS Reserved Instance [Documentation](https://docs.microsoft.com/en-us/azu
 ![avs-ri-3.jpeg Set Filters](http://drive.google.com/uc?export=view&id=1LLaVXf1zV6D4-E4_mXVBNWu25mVjpKNf)
 
 12. Select 'Review + Buy'
-13. Review intermediate reservation state (Pending)
-14. Check final reservation state (Succeeded)
+13. Check final reservation state (Succeeded)
 
 
 ## FAQ: 
