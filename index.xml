@@ -9,29 +9,29 @@
     <lastBuildDate>Wed, 20 Jul 2022 13:03:59 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My AVS</title>
-      <link>https://sjainout.github.io/cloud/posts/avs/readme/</link>
+      <link>https://sjainout.github.io/cloud/posts/avs/avs/</link>
       <pubDate>Wed, 20 Jul 2022 13:03:59 -0400</pubDate>
       
-      <guid>https://sjainout.github.io/cloud/posts/avs/readme/</guid>
+      <guid>https://sjainout.github.io/cloud/posts/avs/avs/</guid>
       <description> AVS Azure VMware Solution # AVS Create AVS Reservation </description>
     </item>
     
     <item>
       <title>MyCloud 101</title>
-      <link>https://sjainout.github.io/cloud/posts/readme/</link>
+      <link>https://sjainout.github.io/cloud/posts/cloud/</link>
       <pubDate>Wed, 20 Jul 2022 13:03:59 -0400</pubDate>
       
-      <guid>https://sjainout.github.io/cloud/posts/readme/</guid>
+      <guid>https://sjainout.github.io/cloud/posts/cloud/</guid>
       <description>MyCloud 101 # AVS
 HCX</description>
     </item>
     
     <item>
       <title>MyHCX 101</title>
-      <link>https://sjainout.github.io/cloud/posts/hcx/readme/</link>
+      <link>https://sjainout.github.io/cloud/posts/hcx/hcx/</link>
       <pubDate>Wed, 20 Jul 2022 13:03:59 -0400</pubDate>
       
-      <guid>https://sjainout.github.io/cloud/posts/hcx/readme/</guid>
+      <guid>https://sjainout.github.io/cloud/posts/hcx/hcx/</guid>
       <description></description>
     </item>
     
