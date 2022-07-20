@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jul 2022 13:03:59 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Avs Reservation</title>
+      <link>https://sjainout.github.io/cloud/docs/avs_reservation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/docs/avs_reservation/</guid>
+      <description>Azure VMware Solution (AVS) Host Reservation # Introduction: # AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements: # AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1.</description>
+    </item>
+    
+    <item>
       <title>My AVS</title>
       <link>https://sjainout.github.io/cloud/posts/avs/avs/</link>
       <pubDate>Wed, 20 Jul 2022 13:03:59 -0400</pubDate>

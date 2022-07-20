@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Azure VMware Solution (AVS) Host Reservation # Introduction: # AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements: # AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Avs Reservation" />
+<meta property="og:description" content="Azure VMware Solution (AVS) Host Reservation # Introduction: # AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements: # AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/docs/avs_reservation/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Avs Reservation | Sunils New Hugo Site</title>
+<link rel="manifest" href="/cloud/manifest.json">
+<link rel="icon" href="/cloud/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/cloud/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/cloud/flexsearch.min.js"></script>
+  <script defer src="/cloud/en.search.min.1a8508e1f5833b96f63568a6e6ab5877a4583650e61cafc23e8f09c91814f2ca.js" integrity="sha256-GoUI4fWDO5b2NWim5qtYd6RYNlDmHK/CPo8JyRgU8so=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cloud/"><span>Sunils New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cloud/docs/avs_reservation/" class="active">Avs Reservation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cloud/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Avs Reservation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/cloud/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction:</a></li>
+    <li><a href="#requirements">Requirements:</a></li>
+    <li><a href="#sample-execution-steps">Sample execution steps:</a></li>
+    <li><a href="#faq">FAQ:</a></li>
+    <li><a href="#open-questions">Open questions:</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="azure-vmware-solution-avs-host-reservation">
+  Azure VMware Solution (AVS) Host Reservation
+  <a class="anchor" href="#azure-vmware-solution-avs-host-reservation">#</a>
+</h1>
+<h2 id="introduction">
+  Introduction:
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.</p>
+<p>Azure AVS Reserved Instance <a href="https://docs.microsoft.com/en-us/azure/azure-vmware/reserved-instance">Documentation</a> covers 2 routes:</p>
+<ol>
+<li>Buy Reserved Instances for an Enterprise Agreement (EA) subscription</li>
+<li>Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription</li>
+</ol>
+<h2 id="requirements">
+  Requirements:
+  <a class="anchor" href="#requirements">#</a>
+</h2>
+<ol>
+<li>AVS Subscription value</li>
+<li>AVS Region</li>
+<li>Reservation duration: 1 year or 3 years</li>
+<li>Payment duration: upfront or monthly</li>
+<li>Number of hosts to reserve</li>
+<li>User purchasing the reservation should have at least one of these roles:
+1. Owner
+2. Reservation Purchase</li>
+</ol>
+<h2 id="sample-execution-steps">
+  Sample execution steps:
+  <a class="anchor" href="#sample-execution-steps">#</a>
+</h2>
+<ol>
+<li>
+<p>Deploy AVS with necessary hosts</p>
+</li>
+<li>
+<p>Log in to Azure portal with Owner credentials</p>
+</li>
+<li>
+<p>Go to &lsquo;Reservation&rsquo; page on Azure Portal
+1. One method is to go to search bar and type in ‘Reservation’</p>
+</li>
+<li>
+<p>Select &lsquo;Purchase&rsquo;</p>
+</li>
+<li>
+<p>Select &lsquo;Azure VMware Solution&rsquo;
+<img src="http://drive.google.com/uc?export=view&amp;id=1hBjA-ID8B4us0nXyc-sPQP1-tPdoFsrV" alt="avs-ri-1.jpeg Select Azure VMware Solution" /></p>
+</li>
+<li>
+<p>Leave scope to default value of &lsquo;shared&rsquo;</p>
+</li>
+<li>
+<p>Set &lsquo;Billing subscription&rsquo; ID to same as AVS&rsquo;s subscription</p>
+</li>
+<li>
+<p>Set &lsquo;Region&rsquo;</p>
+</li>
+<li>
+<p>Set &lsquo;Term&rsquo;</p>
+</li>
+<li>
+<p>Set &lsquo;Billing frequency&rsquo;
+<img src="http://drive.google.com/uc?export=view&amp;id=1_zOGCTa91BXeCl0uXQv0Oyohppiz3qg5" alt="avs-ri-2.jpeg Set Filters" /></p>
+</li>
+<li>
+<p>Select &lsquo;Row&rsquo; and &lsquo;Add to cart&rsquo;
+<img src="http://drive.google.com/uc?export=view&amp;id=1LLaVXf1zV6D4-E4_mXVBNWu25mVjpKNf" alt="avs-ri-3.jpeg Set Filters" /></p>
+</li>
+<li>
+<p>Select &lsquo;Review + Buy&rsquo;</p>
+</li>
+<li>
+<p>Check final reservation state (Succeeded)</p>
+</li>
+</ol>
+<h2 id="faq">
+  FAQ:
+  <a class="anchor" href="#faq">#</a>
+</h2>
+<ol>
+<li>Can there be multiple reservations for a given subscription account?
+yes</li>
+</ol>
+<h2 id="open-questions">
+  Open questions:
+  <a class="anchor" href="#open-questions">#</a>
+</h2>
+<ol>
+<li>Can reservation subcription be changed?</li>
+<li>Can reservation region be changed?</li>
+<li>Can reservation duration be changed?</li>
+<li>Can reservation host type be changed?</li>
+<li>Can reservation be canceled??</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction:</a></li>
+    <li><a href="#requirements">Requirements:</a></li>
+    <li><a href="#sample-execution-steps">Sample execution steps:</a></li>
+    <li><a href="#faq">FAQ:</a></li>
+    <li><a href="#open-questions">Open questions:</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
