@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technical Blog Site for Cloud Products on Cloud 101 Site</title>
+    <link>https://sjainout.github.io/cloud/</link>
+    <description>Recent content in Technical Blog Site for Cloud Products on Cloud 101 Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jul 2022 22:39:34 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HCX AVS Install</title>
+      <link>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</link>
+      <pubDate>Wed, 20 Jul 2022 22:33:23 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</guid>
+      <description>Page under construction</description>
+    </item>
+    
+    <item>
+      <title>AVS Reservation</title>
+      <link>https://sjainout.github.io/cloud/avs/avs_reservation/</link>
+      <pubDate>Wed, 20 Jul 2022 22:32:34 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/avs/avs_reservation/</guid>
+      <description>Azure VMware Solution (AVS) Host Reservation Introduction AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1.</description>
+    </item>
+    
+  </channel>
+</rss>

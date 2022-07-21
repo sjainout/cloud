@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>AVS Reservation - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/avs/avs_reservation/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {--custom-font-color: white;--custom-background-color: black;}
+</style>
+<meta property="og:title" content="AVS Reservation" />
+<meta property="og:description" content="Azure VMware Solution (AVS) Host Reservation Introduction AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/avs/avs_reservation/" /><meta property="article:section" content="AVS" />
+<meta property="article:published_time" content="2022-07-20T22:32:34-04:00" />
+<meta property="article:modified_time" content="2022-07-20T22:32:34-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AVS Reservation"/>
+<meta name="twitter:description" content="Azure VMware Solution (AVS) Host Reservation Introduction AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1."/>
+<meta itemprop="name" content="AVS Reservation">
+<meta itemprop="description" content="Azure VMware Solution (AVS) Host Reservation Introduction AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.
+Azure AVS Reserved Instance Documentation covers 2 routes:
+Buy Reserved Instances for an Enterprise Agreement (EA) subscription Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription Requirements AVS Subscription value AVS Region Reservation duration: 1 year or 3 years Payment duration: upfront or monthly Number of hosts to reserve User purchasing the reservation should have at least one of these roles: 1."><meta itemprop="datePublished" content="2022-07-20T22:32:34-04:00" />
+<meta itemprop="dateModified" content="2022-07-20T22:32:34-04:00" />
+<meta itemprop="wordCount" content="221">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/"><i class='fa fa-heart'></i>&nbsp;Home</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>AVS Reservation</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#sample-execution-steps">Sample execution steps</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#open-questions">Open questions</a></li>
+  </ul>
+</nav></aside>
+
+<h1 id="azure-vmware-solution-avs-host-reservation">Azure VMware Solution (AVS) Host Reservation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>AVS host by default are created using on-demand billing rates but if Reserved Instance (RI) for AVS host is purchased then customer can reduce the overall billing commitment.</p>
+<p>Azure AVS Reserved Instance <a href="https://docs.microsoft.com/en-us/azure/azure-vmware/reserved-instance">Documentation</a> covers 2 routes:</p>
+<ol>
+<li>Buy Reserved Instances for an Enterprise Agreement (EA) subscription</li>
+<li>Buy Reserved Instances for a Cloud Solution Provider (CSP) subscription</li>
+</ol>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>AVS Subscription value</li>
+<li>AVS Region</li>
+<li>Reservation duration: 1 year or 3 years</li>
+<li>Payment duration: upfront or monthly</li>
+<li>Number of hosts to reserve</li>
+<li>User purchasing the reservation should have at least one of these roles:
+1. Owner
+2. Reservation Purchase</li>
+</ol>
+<h2 id="sample-execution-steps">Sample execution steps</h2>
+<ol>
+<li>Deploy AVS with necessary hosts</li>
+<li>Log in to Azure portal with Owner credentials</li>
+<li>Go to &lsquo;Reservation&rsquo; page on Azure Portal
+1. One method is to go to search bar and type in ‘Reservation’</li>
+<li>Select &lsquo;Purchase&rsquo;</li>
+<li>Select &lsquo;Azure VMware Solution&rsquo;</li>
+</ol>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1hBjA-ID8B4us0nXyc-sPQP1-tPdoFsrV" alt="avs-ri-1.jpeg Select Azure VMware Solution"></p>
+<ol start="6">
+<li>Leave scope to default value of &lsquo;shared&rsquo;</li>
+<li>Set &lsquo;Billing subscription&rsquo; ID to same as AVS&rsquo;s subscription</li>
+<li>Set &lsquo;Region&rsquo;</li>
+<li>Set &lsquo;Term&rsquo;</li>
+<li>Set &lsquo;Billing frequency&rsquo;</li>
+</ol>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1_zOGCTa91BXeCl0uXQv0Oyohppiz3qg5" alt="avs-ri-2.jpeg Set Filters"></p>
+<ol start="11">
+<li>Select &lsquo;Row&rsquo; and &lsquo;Add to cart&rsquo;</li>
+</ol>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1LLaVXf1zV6D4-E4_mXVBNWu25mVjpKNf" alt="avs-ri-3.jpeg Set Filters"></p>
+<ol start="12">
+<li>Select &lsquo;Review + Buy&rsquo;</li>
+<li>Check final reservation state (Succeeded)</li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<ol>
+<li>Can there be multiple reservations for a given subscription account?
+yes</li>
+</ol>
+<h2 id="open-questions">Open questions</h2>
+<ol>
+<li>Can reservation subcription be changed?</li>
+<li>Can reservation region be changed?</li>
+<li>Can reservation duration be changed?</li>
+<li>Can reservation host type be changed?</li>
+<li>Can reservation be canceled?</li>
+</ol>
+<div class="edit-meta">
+Last updated on 20 Jul 2022
+
+
+<br>
+Published on 20 Jul 2022
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/avs/" title="AVS"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - AVS</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/hcx/" title="HCxes">Next - HCxes <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/">HCxes</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/avs/">AVS</a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
