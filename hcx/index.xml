@@ -13,7 +13,7 @@
       <pubDate>Wed, 20 Jul 2022 22:33:23 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</guid>
-      <description>Page under construction</description>
+      <description>Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for the Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record for on prem HCX connector w/ it’s static IP and FQDN name Additional details which will be needed during deployment and configuration: vCenter, PSC, vCenter admin credentials, DNS Server, NTP, Proxy Server, Storage for HCX deployment, Cluster w/ test VMs, L2 extended port group, etc </description>
     </item>
     
   </channel>

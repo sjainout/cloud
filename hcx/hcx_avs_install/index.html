@@ -17,7 +17,7 @@
 :root {}
 </style>
 <meta property="og:title" content="HCX AVS Install" />
-<meta property="og:description" content="Page under construction" />
+<meta property="og:description" content="Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for the Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record for on prem HCX connector w/ it’s static IP and FQDN name Additional details which will be needed during deployment and configuration: vCenter, PSC, vCenter admin credentials, DNS Server, NTP, Proxy Server, Storage for HCX deployment, Cluster w/ test VMs, L2 extended port group, etc " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/hcx/hcx_avs_install/" /><meta property="article:section" content="HCX" />
 <meta property="article:published_time" content="2022-07-20T22:33:23-04:00" />
@@ -25,11 +25,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HCX AVS Install"/>
-<meta name="twitter:description" content="Page under construction"/>
+<meta name="twitter:description" content="Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for the Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record for on prem HCX connector w/ it’s static IP and FQDN name Additional details which will be needed during deployment and configuration: vCenter, PSC, vCenter admin credentials, DNS Server, NTP, Proxy Server, Storage for HCX deployment, Cluster w/ test VMs, L2 extended port group, etc "/>
 <meta itemprop="name" content="HCX AVS Install">
-<meta itemprop="description" content="Page under construction"><meta itemprop="datePublished" content="2022-07-20T22:33:23-04:00" />
+<meta itemprop="description" content="Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for the Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record for on prem HCX connector w/ it’s static IP and FQDN name Additional details which will be needed during deployment and configuration: vCenter, PSC, vCenter admin credentials, DNS Server, NTP, Proxy Server, Storage for HCX deployment, Cluster w/ test VMs, L2 extended port group, etc "><meta itemprop="datePublished" content="2022-07-20T22:33:23-04:00" />
 <meta itemprop="dateModified" content="2022-07-20T22:33:23-04:00" />
-<meta itemprop="wordCount" content="3">
+<meta itemprop="wordCount" content="106">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -38,13 +38,46 @@
 <nav>
 <ul>
 <li id="home" class=""><a href="/cloud/"><i class='fa fa-heart'></i>&nbsp;Home</a></li>
-<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">&nbsp;AVS Doc</a></li></ul>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li></ul>
 </nav>
 </div>
 
 <div class="content-container">
 <main><h1>HCX AVS Install</h1>
-<p>Page under construction</p>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-deployment-information">Pre-Deployment Information</a></li>
+  </ul>
+</nav></aside>
+
+<h2 id="pre-deployment-information">Pre-Deployment Information</h2>
+<ol>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/install-vmware-hcx">Deployment details</a></li>
+<li><a href="https://docs.vmware.com/en/VMware-HCX/4.2/hcx-user-guide/GUID-A631101E-8564-4173-8442-1D294B731CEB.html">On-prem HCX install requirements</a></li>
+<li><a href="https://ports.esp.vmware.com/home/VMware-HCX">On-prem HCX ports</a></li>
+<li>On-prem HCX IP requirements:
+<ol>
+<li>4x IP Addresses for HCX Appliances
+<ol>
+<li>3x management IPs
+<ol>
+<li>1x will be for the HCX Manager</li>
+<li>1x will be for the Interconnect Appliance</li>
+<li>1x will be for each Network Extension Appliance</li>
+</ol>
+</li>
+<li>1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>DNS A record for on prem HCX connector w/ it’s static IP and FQDN name</li>
+<li>Additional details which will be needed during deployment and configuration:
+vCenter, PSC, vCenter admin credentials, DNS Server, NTP, Proxy Server, Storage for HCX deployment, Cluster w/ test VMs, L2 extended port group, etc</li>
+</ol>
 <div class="edit-meta">
 Last updated on 20 Jul 2022
 
@@ -52,7 +85,7 @@ Last updated on 20 Jul 2022
 <br>
 Published on 20 Jul 2022
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/hcx/" title="HCX"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - HCX</a>
-<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/" title="AVS">Next - AVS <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/" title="VMware Site Recovery (SRM)">Next - VMware Site Recovery (SRM) <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -74,6 +107,14 @@ Published on 20 Jul 2022
   
 <ul class="sub-menu">
 <li class="active"><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/srm/">VMware Site Recovery (SRM)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
 </ul>
   
 </li>
