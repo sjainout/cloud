@@ -14,7 +14,7 @@
       
       <guid>https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/</guid>
       <description>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&amp;rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. So, if 1 interface is used for upline, 1 for management, then, 8 segments can be used to create security zones.</description>
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones.</description>
     </item>
     
     <item>
