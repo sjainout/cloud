@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>AVS NSXT NVA Architectures - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="AVS NSXT NVA Architectures" />
+<meta property="og:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. So, if 1 interface is used for upline, 1 for management, then, 8 segments can be used to create security zones." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/" /><meta property="article:section" content="AVS" />
+<meta property="article:published_time" content="2022-07-22T16:13:18-04:00" />
+<meta property="article:modified_time" content="2022-07-22T16:13:18-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AVS NSXT NVA Architectures"/>
+<meta name="twitter:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. So, if 1 interface is used for upline, 1 for management, then, 8 segments can be used to create security zones."/>
+<meta itemprop="name" content="AVS NSXT NVA Architectures">
+<meta itemprop="description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. So, if 1 interface is used for upline, 1 for management, then, 8 segments can be used to create security zones."><meta itemprop="datePublished" content="2022-07-22T16:13:18-04:00" />
+<meta itemprop="dateModified" content="2022-07-22T16:13:18-04:00" />
+<meta itemprop="wordCount" content="114">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>AVS NSXT NVA Architectures</h1>
+<p>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).</p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1gfYk5iWTVkJ2oGartkNpmMAY5SUsP2WS" alt="AVS NVA Architecture Choices"></p>
+<ul>
+<li>Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment.</li>
+<li>From scale point of view, ESXi supports 10 network interfaces per VM. So, if 1 interface is used for upline, 1 for management, then, 8 segments can be used to create security zones.- Security zone in these options can either be &lsquo;a segment&rsquo; or &lsquo;an isolated NSX-T T1 gateway&rsquo;</li>
+<li>On the NSX-T T1, configure a summary static route for all the south-bound segments with next hop set to NVA.</li>
+</ul>
+<div class="edit-meta">
+Last updated on 22 Jul 2022
+
+
+<br>
+Published on 22 Jul 2022
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/avs/" title="Azure VMware Solution"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Azure VMware Solution</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/avs_reservation/" title="AVS Reservation">Next - AVS Reservation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/">HCX</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/srm/">VMware Site Recovery (SRM)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

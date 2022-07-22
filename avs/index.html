@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>AVS - Cloud 101 Site</title>
+<title>Azure VMware Solution - Cloud 101 Site</title>
 <meta name="generator" content="Hugo 0.101.0" />
 <link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
 <link rel="canonical" href="https://sjainout.github.io/cloud/avs/">
@@ -16,15 +16,15 @@
 <script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="AVS" />
+<meta property="og:title" content="Azure VMware Solution" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/avs/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AVS"/>
+<meta name="twitter:title" content="Azure VMware Solution"/>
 <meta name="twitter:description" content=""/>
-<meta itemprop="name" content="AVS">
+<meta itemprop="name" content="Azure VMware Solution">
 <meta itemprop="description" content=""></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -32,30 +32,38 @@
 <div class="global-menu">
 <nav>
 <ul>
-<li id="home" class=""><a href="/cloud/"><i class='fa fa-heart'></i>&nbsp;Home</a></li>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
 <li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
 <li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
-<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li></ul>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
 </nav>
 </div>
 
 <div class="content-container">
-<main><h1>AVS</h1><h2 id="details">Details</h2>
-<ol>
+<main><h1>Azure VMware Solution</h1><h2 id="details">Details</h2>
+<ul>
 <li><a href="avs_reservation">AVS Reservations</a></li>
-</ol>
+<li><a href="avs_nsxt_nva_architectures">AVS NSX-T NVA Architectures</a></li>
+</ul>
 <h2 id="vmware-references">VMware References</h2>
-<ol>
+<ul>
 <li><a href="https://www.youtube.com/channel/UCF7hgn3hpaBX2Lr_tPFxUhg">AVS Sales YouTube Channel</a></li>
 <li><a href="https://www.youtube.com/watch?v=6t5U2WTC9pM&amp;list=PLNOz1mVhDkG4MUkHCxTg6OCB4DBbLp8Zg&amp;index=6">AVS Marketing YouTube Channel</a></li>
+<li><a href="https://vmc.techzone.vmware.com/avs-hol">AVS Hands On Lab</a></li>
 <li><a href="https://vmc.techzone.vmware.com/azure-vmware-solution">VMware AVS Techzone</a></li>
-<li><a href="https://blogs.vmware.com/cloud/2021/08/30/new-vmware-cloud-ready-framework-and-techzone-updates/">VMware Cloud Ready Framework (VMCRF)</a></li>
-</ol>
+<li><a href="https://kb.vmware.com/s/article/85809">AVS and VMware Service Support KB</a></li>
+</ul>
 <h2 id="azure-references">Azure References</h2>
-<ol>
+<ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">Azure Documentation</a></li>
 <li><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-vmware/eslz-network-topology-connectivity">Azure AVS Network Connectivity Models</a></li>
-</ol>
+</ul>
+<h2 id="netapp-reference">NetApp Reference</h2>
+<ul>
+<li><a href="https://anftechteam.github.io/calc/">Azure NetApp File Performance Calculator</a></li>
+</ul>
+<hr>
 <div class="edit-meta">
 Last updated on 20 Jul 2022
 
@@ -63,7 +71,7 @@ Last updated on 20 Jul 2022
 <br>
 Published on 20 Jul 2022
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/" title="Technical Notes for Cloud Services"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Technical Notes for Cloud Services</a>
-<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/avs_reservation/" title="AVS Reservation">Next - AVS Reservation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/" title="AVS NSXT NVA Architectures">Next - AVS NSXT NVA Architectures <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -73,9 +81,10 @@ Published on 20 Jul 2022
 <ul>
 <li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
 
-<li class=" active"><a href="https://sjainout.github.io/cloud/avs/">AVS</a>
+<li class=" active"><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
   
 <ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
 </ul>
   
