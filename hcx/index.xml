@@ -16,5 +16,17 @@
       <description>Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for each Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record is needeed for on-prem HCX connector to map it’s static IP with it&amp;rsquo;s FQDN name Additional details which will be needed during deployment and configuration: vCenter URL PSC URL vCenter admin credentials DNS Server IP NTP Server IP Proxy Server (optional) Storage for HCX deployment Cluster w/ test workload VMs vDS w/ Port Group for L2 extension AVS HCX Manager Deployment AVS Side HCX Deployment</description>
     </item>
     
+    <item>
+      <title>HCX On-Prem Connector OVA Download</title>
+      <link>https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/</link>
+      <pubDate>Mon, 25 Jul 2022 08:50:43 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/</guid>
+      <description>Documentation
+login to cloud HCX manager get cloud HCX manager URL AVS &amp;gt; Add-ons &amp;gt; Migration using HCX &amp;gt; HCX Cloud Manager IP get cloud HCX manager login credentials AVS &amp;gt; Identity &amp;gt; vCenter &amp;gt; Admin username AVS &amp;gt; Identity &amp;gt; vCenter &amp;gt; Admin password
+(do not select &amp;lsquo;Generate a new password&amp;rsquo;)
+open browser to cloud HCX manager Use the IP, username and password gathered from earlier steps to go to https:// download on-prem HCX Connector OVA request download link HCX &amp;gt; Administrator &amp;gt; System Updates</description>
+    </item>
+    
   </channel>
 </rss>
