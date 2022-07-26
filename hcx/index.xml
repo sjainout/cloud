@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HCX on Cloud 101 Site</title>
+    <title>Migration with VMware Hybrid Cloud Extension (HCX) on Cloud 101 Site</title>
     <link>https://sjainout.github.io/cloud/hcx/</link>
-    <description>Recent content in HCX on Cloud 101 Site</description>
+    <description>Recent content in Migration with VMware Hybrid Cloud Extension (HCX) on Cloud 101 Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jul 2022 23:28:46 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/hcx/index.xml" rel="self" type="application/rss+xml" />

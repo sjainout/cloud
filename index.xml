@@ -8,12 +8,30 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jul 2022 22:39:34 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SRM AVS Install</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_avs_install/</link>
+      <pubDate>Thu, 21 Jul 2022 11:41:29 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/srm/srm_avs_install/</guid>
+      <description>Deployment Information AVS DR w/ VMware&amp;rsquo;s SRM Installation Information</description>
+    </item>
+    
+    <item>
       <title>HCX AVS Install</title>
       <link>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</link>
       <pubDate>Wed, 20 Jul 2022 22:33:23 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</guid>
       <description>Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for each Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record is needeed for on-prem HCX connector to map it’s static IP with it&amp;rsquo;s FQDN name Additional details which will be needed during deployment and configuration: vCenter URL PSC URL vCenter admin credentials DNS Server IP NTP Server IP Proxy Server (optional) Storage for HCX deployment Cluster w/ test workload VMs vDS w/ Port Group for L2 extension AVS HCX Manager Deployment AVS Side HCX Deployment</description>
+    </item>
+    
+    <item>
+      <title>Application DR architecture keeping same IP</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
+      <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</guid>
+      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
     </item>
     
     <item>
@@ -45,15 +63,6 @@ open browser to cloud HCX manager Use the IP, username and password gathered fro
       <guid>https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/</guid>
       <description>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&amp;rsquo;s point of view it is just another Virtual Machine (VM).
 Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones.</description>
-    </item>
-    
-    <item>
-      <title>SRM AVS Install</title>
-      <link>https://sjainout.github.io/cloud/srm/srm_avs_install/</link>
-      <pubDate>Thu, 21 Jul 2022 11:41:29 -0400</pubDate>
-      
-      <guid>https://sjainout.github.io/cloud/srm/srm_avs_install/</guid>
-      <description>Deployment Information AVS DR w/ VMware&amp;rsquo;s SRM Installation Information</description>
     </item>
     
     <item>

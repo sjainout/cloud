@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Application DR architecture keeping same IP - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Application DR architecture keeping same IP" />
+<meta property="og:description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/" /><meta property="article:section" content="SRM" />
+<meta property="article:published_time" content="2022-07-26T13:20:25-04:00" />
+<meta property="article:modified_time" content="2022-07-26T13:20:25-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Application DR architecture keeping same IP"/>
+<meta name="twitter:description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) "/>
+<meta itemprop="name" content="Application DR architecture keeping same IP">
+<meta itemprop="description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) "><meta itemprop="datePublished" content="2022-07-26T13:20:25-04:00" />
+<meta itemprop="dateModified" content="2022-07-26T13:20:25-04:00" />
+<meta itemprop="wordCount" content="122">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Application DR architecture keeping same IP</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dr-steady-state">DR steady state</a></li>
+        <li><a href="#dr-test">DR Test</a></li>
+        <li><a href="#dr-migration">DR Migration</a></li>
+        <li><a href="#dr-event">DR Event</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+
+<h3 id="dr-steady-state">DR steady state</h3>
+<ul>
+<li>Protected site: On-Prem</li>
+<li>Recovery site: AVS</li>
+<li>DR Platform: VMware Site Recovery</li>
+<li>Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG)</li>
+<li>Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date</li>
+</ul>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Um4t5JuVZD0kENd2ccPtOtNNQ167AQsD" alt="srm_hcx_1"></p>
+<h3 id="dr-test">DR Test</h3>
+<ul>
+<li>DR test platform: Site Recovery Manager (SRM)</li>
+<li>DR test network: Isolated Segment in AVS</li>
+</ul>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1ZiRB-rjECiKYGv_Vxgjfs9qyw3zOUixi" alt="srm_hcx_2"></p>
+<h3 id="dr-migration">DR Migration</h3>
+<ul>
+<li>DR migration platform: Site Recovery Manager (SRM)</li>
+<li>Protected VMs: 3 On-Prem VMs will be shutdown</li>
+<li>Recovery VMs: 3 AVS VMs will be powered on</li>
+<li>Recovery VM network: Layer 2 extended network</li>
+<li>Network extension platform: HCX</li>
+</ul>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Ww4Ywm98hOEvCLKy4ff05VgtU2MonFHI" alt="srm_hcx_3"></p>
+<h3 id="dr-event">DR Event</h3>
+<ul>
+<li>Protected Site: no longer available</li>
+<li>Recovery Site: AVS</li>
+<li>Recovery VMs: all VMs come up on AVS</li>
+<li>Recovery VM network: Layer 3 segment</li>
+<li>Recovery network platform: NSX-t (part of AVS)</li>
+</ul>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1XEBQl9dfKSqsEIw8_oSP46V-1IbMWkQb" alt="srm_hcx_4"></p>
+<div class="edit-meta">
+Last updated on 26 Jul 2022
+
+
+<br>
+Published on 26 Jul 2022
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/srm/srm_avs_install/" title="SRM AVS Install"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - SRM AVS Install</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/srm_avs_install/" title="SRM AVS Install">Next - SRM AVS Install <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_internet_access/">AVS Internet Access Architecture Options</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/">Migration with VMware Hybrid Cloud Extension (HCX)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/">HCX On-Prem Connector OVA Download</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/srm/">DR with VMware Site Recovery (SRM)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application DR architecture keeping same IP</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

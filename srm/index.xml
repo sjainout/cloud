@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VMware Site Recovery (SRM) on Cloud 101 Site</title>
+    <title>DR with VMware Site Recovery (SRM) on Cloud 101 Site</title>
     <link>https://sjainout.github.io/cloud/srm/</link>
-    <description>Recent content in VMware Site Recovery (SRM) on Cloud 101 Site</description>
+    <description>Recent content in DR with VMware Site Recovery (SRM) on Cloud 101 Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Jul 2022 11:48:08 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/srm/index.xml" rel="self" type="application/rss+xml" />
@@ -14,6 +14,15 @@
       
       <guid>https://sjainout.github.io/cloud/srm/srm_avs_install/</guid>
       <description>Deployment Information AVS DR w/ VMware&amp;rsquo;s SRM Installation Information</description>
+    </item>
+    
+    <item>
+      <title>Application DR architecture keeping same IP</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
+      <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</guid>
+      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
     </item>
     
   </channel>
