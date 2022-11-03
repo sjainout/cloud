@@ -31,7 +31,7 @@
       <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</guid>
-      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs will be created and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
+      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
     </item>
     
     <item>
@@ -44,6 +44,15 @@
 login to cloud HCX manager get cloud HCX manager URL AVS &amp;gt; Add-ons &amp;gt; Migration using HCX &amp;gt; HCX Cloud Manager IP get cloud HCX manager login credentials AVS &amp;gt; Identity &amp;gt; vCenter &amp;gt; Admin username AVS &amp;gt; Identity &amp;gt; vCenter &amp;gt; Admin password
 (do not select &amp;lsquo;Generate a new password&amp;rsquo;)
 open browser to cloud HCX manager Use the IP, username and password gathered from earlier steps to go to https:// download on-prem HCX Connector OVA request download link HCX &amp;gt; Administrator &amp;gt; System Updates</description>
+    </item>
+    
+    <item>
+      <title>Disaster and Backup Recovery Architecture</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
+      <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</guid>
+      <description>DR and Backup steady state Application Tiers: Essential: consists of shared platform services examples of essential services: Active Directory, Firewall, Loadbalancer, etc these services are setup in active/active or active/standby format Disaster Recovery Backup Recovery </description>
     </item>
     
     <item>
