@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Disaster and Backup Recovery Architecture - Cloud 101 Site</title>
+<title>HA, DR, and Backup Architecture - Cloud 101 Site</title>
 <meta name="generator" content="Hugo 0.101.0" />
 <link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
 <link rel="canonical" href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">
@@ -16,20 +16,29 @@
 <script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="Disaster and Backup Recovery Architecture" />
-<meta property="og:description" content="DR and Backup steady state Application Tiers: Essential: consists of shared platform services examples of essential services: Active Directory, Firewall, Loadbalancer, etc these services are setup in active/active or active/standby format Disaster Recovery Backup Recovery " />
+<meta property="og:title" content="HA, DR, and Backup Architecture" />
+<meta property="og:description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
+RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
+RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/" /><meta property="article:section" content="SRM" />
 <meta property="article:published_time" content="2022-10-26T09:56:17-04:00" />
 <meta property="article:modified_time" content="2022-10-26T09:56:17-04:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Disaster and Backup Recovery Architecture"/>
-<meta name="twitter:description" content="DR and Backup steady state Application Tiers: Essential: consists of shared platform services examples of essential services: Active Directory, Firewall, Loadbalancer, etc these services are setup in active/active or active/standby format Disaster Recovery Backup Recovery "/>
-<meta itemprop="name" content="Disaster and Backup Recovery Architecture">
-<meta itemprop="description" content="DR and Backup steady state Application Tiers: Essential: consists of shared platform services examples of essential services: Active Directory, Firewall, Loadbalancer, etc these services are setup in active/active or active/standby format Disaster Recovery Backup Recovery "><meta itemprop="datePublished" content="2022-10-26T09:56:17-04:00" />
+<meta name="twitter:title" content="HA, DR, and Backup Architecture"/>
+<meta name="twitter:description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
+RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
+RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3"/>
+<meta itemprop="name" content="HA, DR, and Backup Architecture">
+<meta itemprop="description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
+RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
+RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3"><meta itemprop="datePublished" content="2022-10-26T09:56:17-04:00" />
 <meta itemprop="dateModified" content="2022-10-26T09:56:17-04:00" />
-<meta itemprop="wordCount" content="35">
+<meta itemprop="wordCount" content="278">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -46,36 +55,152 @@
 </div>
 
 <div class="content-container">
-<main><h1>Disaster and Backup Recovery Architecture</h1>
+<main><h1>HA, DR, and Backup Architecture</h1>
 <aside class="table_of_contents">
 <h5>Table of Contents</h5><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#dr-and-backup-steady-state">DR and Backup steady state</a></li>
-        <li><a href="#disaster-recovery">Disaster Recovery</a></li>
-        <li><a href="#backup-recovery">Backup Recovery</a></li>
+        <li><a href="#high-availability-dr-and-backup-steady-state">High Availability, DR and Backup Steady State</a>
+          <ul>
+            <li><a href="#application-requirement-and-data-synchronization-platform">Application Requirement and Data synchronization platform</a></li>
+            <li><a href="#steady-state">Steady State</a></li>
+          </ul>
+        </li>
+        <li><a href="#recovery-state">Recovery State</a>
+          <ul>
+            <li><a href="#application-recovery-sequence">Application Recovery Sequence</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
 </nav></aside>
 
-<h3 id="dr-and-backup-steady-state">DR and Backup steady state</h3>
+<h3 id="high-availability-dr-and-backup-steady-state">High Availability, DR and Backup Steady State</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=19O5Es0A8ZKCMzRhwL-euPOcBi8876x87" alt="ha_dr_backup_steadystate_1"></p>
+<h4 id="application-requirement-and-data-synchronization-platform">Application Requirement and Data synchronization platform</h4>
+<ol start="0">
+<li>
+<p>Tier 0</p>
 <ul>
-<li>Application Tiers:
+<li>Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0</li>
+<li>Example: Shared services (Active Directory, Network Firewall, Load Balancer)</li>
+<li>Synchronization: Application platform-based replication (active-active)</li>
+<li>Storage: Integrated</li>
+</ul>
+</li>
+<li>
+<p>Tier 1</p>
 <ul>
-<li>Essential:
+<li>RTO: minutes; RPO: seconds</li>
+<li>Example: Financial and Business critical applications</li>
+<li>Synchronization: Application platform-based replication (active-standby)</li>
+<li>Storage: Integrated (AV36)</li>
+</ul>
+</li>
+<li>
+<p>Tier 2</p>
 <ul>
-<li>consists of shared platform services</li>
-<li>examples of essential services: Active Directory, Firewall, Loadbalancer, etc</li>
-<li>these services are setup in active/active or active/standby format</li>
+<li>RTO: hours; RPO: minutes</li>
+<li>Example: Production applications</li>
+<li>Synchronization: DR platform-based replication</li>
+<li>Storage: Integrated (AV36)</li>
+</ul>
+</li>
+<li>
+<p>Tier 3</p>
+<ul>
+<li>RTO: hours; RPO: hours</li>
+<li>Example: Test applications</li>
+<li>Synchronization: DR platform-based replication</li>
+<li>Storage: Network mounted (ANF)</li>
+</ul>
+</li>
+<li>
+<p>Tier 4</p>
+<ul>
+<li>RTO: days; RPO: daily</li>
+<li>Example: Development applications</li>
+<li>Synchronization: Backup platform-based replication</li>
+<li>Storage: External (Blob)</li>
+</ul>
+</li>
+</ol>
+<h4 id="steady-state">Steady State</h4>
+<ul>
+<li>Deploy sufficient AVS hosts for:
+<ul>
+<li>Tier 0 applications</li>
+<li>Tier 1 applications</li>
+<li>Tier 2 storage placeholders</li>
+</ul>
+</li>
+<li>Setup Disaster Recovery platforms to continuously replicate data for:
+<ul>
+<li>Tier 2 applications</li>
+<li>Tier 3 applications (check to see which DR platforms support this)</li>
+</ul>
+</li>
+<li>Setup Backup platforms to periodically replicate data to Blob storage for:
+<ul>
+<li>Tier 2 - 4 applications</li>
+</ul>
+</li>
+<li>Recovery Test:
+<ul>
+<li>Periodically conduct DR and Backup Recovery test</li>
+<li>Isolated network environment can be setup using NSX-t in AVS</li>
 </ul>
 </li>
 </ul>
-</li>
+<h3 id="recovery-state">Recovery State</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1rdkenTlnUNNmf73D-pukPfpQeWxh9q7W" alt="ha_dr_backup_recoverystate_2"></p>
+<h4 id="application-recovery-sequence">Application Recovery Sequence</h4>
+<ol>
+<li>
+<p>Tier 0</p>
+<ul>
+<li>Recovery is immediate (active)</li>
+<li>Recovery Platform: Application HA</li>
 </ul>
-<h3 id="disaster-recovery">Disaster Recovery</h3>
-<h3 id="backup-recovery">Backup Recovery</h3>
+</li>
+<li>
+<p>Tier 1</p>
+<ul>
+<li>Recovery is in seconds (standby &gt; active)</li>
+<li>Recovery Platform: Application HA</li>
+</ul>
+</li>
+<li>
+<p>Tier 2</p>
+<ul>
+<li>Recovery is in minutes (DR placeholder &gt; guest OS bootup)</li>
+<li>Recovery Platform: DR</li>
+</ul>
+</li>
+<li>
+<p>Infrastructure Expansion</p>
+<ul>
+<li>Add new AVS host(s) to vSAN clusters (hours) for Tier 3 - 4</li>
+</ul>
+</li>
+<li>
+<p>Tier 3</p>
+<ul>
+<li>Recovery is in hour(s) (DR placeholder &gt; guest OS bootup)</li>
+<li>Recovery Platform: DR</li>
+</ul>
+</li>
+<li>
+<p>Tier 4</p>
+<ul>
+<li>Recover subset of backed up applications</li>
+<li>Recovery is in hours/day(s) (Blob storage &gt; AVS storage)</li>
+<li>Recovery Platform: Backup</li>
+</ul>
+</li>
+</ol>
 <div class="edit-meta">
 Last updated on 26 Oct 2022
 
@@ -117,7 +242,7 @@ Published on 26 Oct 2022
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application DR architecture keeping same IP</a></li>
-<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">Disaster and Backup Recovery Architecture</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, and Backup Architecture</a></li>
 </ul>
   
 </li>
