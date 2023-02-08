@@ -28,5 +28,17 @@ login to cloud HCX manager get cloud HCX manager URL AVS &amp;gt; Add-ons &amp;g
 open browser to cloud HCX manager Use the IP, username and password gathered from earlier steps to go to https:// download on-prem HCX Connector OVA request download link HCX &amp;gt; Administrator &amp;gt; System Updates</description>
     </item>
     
+    <item>
+      <title>Migrate Network with HCX</title>
+      <link>https://sjainout.github.io/cloud/hcx/hcx_network_migrate/</link>
+      <pubDate>Mon, 06 Feb 2023 17:39:04 -0500</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/hcx/hcx_network_migrate/</guid>
+      <description>VMware&amp;rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:
+Migrate Virtual Machine from source datacenter to AVS Migrate Network segment from source datacenter to AVS In this article we&amp;rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.
+Network Migration States We&amp;rsquo;ll explore the transition with the following states:
+Initial State: where source datacenter has network connection to AVS private cloud.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -31,7 +31,7 @@
       <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</guid>
-      <description>High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+      <description>Steady State Application Requirement and Data synchronization platform Tier 0
 Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
 RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
 RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3</description>

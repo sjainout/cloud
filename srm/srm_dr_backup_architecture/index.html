@@ -17,7 +17,7 @@
 :root {}
 </style>
 <meta property="og:title" content="HA, DR, and Backup Architecture" />
-<meta property="og:description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+<meta property="og:description" content="Steady State Application Requirement and Data synchronization platform Tier 0
 Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
 RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
 RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3" />
@@ -28,17 +28,17 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HA, DR, and Backup Architecture"/>
-<meta name="twitter:description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+<meta name="twitter:description" content="Steady State Application Requirement and Data synchronization platform Tier 0
 Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
 RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
 RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3"/>
 <meta itemprop="name" content="HA, DR, and Backup Architecture">
-<meta itemprop="description" content="High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+<meta itemprop="description" content="Steady State Application Requirement and Data synchronization platform Tier 0
 Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
 RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
 RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3"><meta itemprop="datePublished" content="2022-10-26T09:56:17-04:00" />
 <meta itemprop="dateModified" content="2022-10-26T09:56:17-04:00" />
-<meta itemprop="wordCount" content="278">
+<meta itemprop="wordCount" content="273">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -61,10 +61,10 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
   <ul>
     <li>
       <ul>
-        <li><a href="#high-availability-dr-and-backup-steady-state">High Availability, DR and Backup Steady State</a>
+        <li><a href="#steady-state">Steady State</a>
           <ul>
             <li><a href="#application-requirement-and-data-synchronization-platform">Application Requirement and Data synchronization platform</a></li>
-            <li><a href="#steady-state">Steady State</a></li>
+            <li><a href="#recommended-actions">Recommended Actions</a></li>
           </ul>
         </li>
         <li><a href="#recovery-state">Recovery State</a>
@@ -77,7 +77,7 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
   </ul>
 </nav></aside>
 
-<h3 id="high-availability-dr-and-backup-steady-state">High Availability, DR and Backup Steady State</h3>
+<h3 id="steady-state">Steady State</h3>
 <p><img src="http://drive.google.com/uc?export=view&amp;id=19O5Es0A8ZKCMzRhwL-euPOcBi8876x87" alt="ha_dr_backup_steadystate_1"></p>
 <h4 id="application-requirement-and-data-synchronization-platform">Application Requirement and Data synchronization platform</h4>
 <ol start="0">
@@ -127,7 +127,7 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
 </ul>
 </li>
 </ol>
-<h4 id="steady-state">Steady State</h4>
+<h4 id="recommended-actions">Recommended Actions</h4>
 <ul>
 <li>Deploy sufficient AVS hosts for:
 <ul>
@@ -233,6 +233,7 @@ Published on 26 Oct 2022
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/">HCX On-Prem Connector OVA Download</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/">Migrate Network with HCX</a></li>
 </ul>
   
 </li>

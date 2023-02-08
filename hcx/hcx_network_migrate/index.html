@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Migrate Network with HCX - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Migrate Network with HCX" />
+<meta property="og:description" content="VMware&rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:
+Migrate Virtual Machine from source datacenter to AVS Migrate Network segment from source datacenter to AVS In this article we&rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.
+Network Migration States We&rsquo;ll explore the transition with the following states:
+Initial State: where source datacenter has network connection to AVS private cloud." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/" /><meta property="article:section" content="HCX" />
+<meta property="article:published_time" content="2023-02-06T17:39:04-05:00" />
+<meta property="article:modified_time" content="2023-02-06T17:39:04-05:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Migrate Network with HCX"/>
+<meta name="twitter:description" content="VMware&rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:
+Migrate Virtual Machine from source datacenter to AVS Migrate Network segment from source datacenter to AVS In this article we&rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.
+Network Migration States We&rsquo;ll explore the transition with the following states:
+Initial State: where source datacenter has network connection to AVS private cloud."/>
+<meta itemprop="name" content="Migrate Network with HCX">
+<meta itemprop="description" content="VMware&rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:
+Migrate Virtual Machine from source datacenter to AVS Migrate Network segment from source datacenter to AVS In this article we&rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.
+Network Migration States We&rsquo;ll explore the transition with the following states:
+Initial State: where source datacenter has network connection to AVS private cloud."><meta itemprop="datePublished" content="2023-02-06T17:39:04-05:00" />
+<meta itemprop="dateModified" content="2023-02-06T17:39:04-05:00" />
+<meta itemprop="wordCount" content="309">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Migrate Network with HCX</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#network-migration-states">Network Migration States</a>
+      <ul>
+        <li><a href="#initial-state">Initial State</a></li>
+        <li><a href="#intermediate-network-extension-state">Intermediate Network Extension State</a></li>
+        <li><a href="#intermediate-optimized-local-routing-state-optional">Intermediate Optimized Local Routing State (Optional)</a></li>
+        <li><a href="#final-network-migration-state">Final Network Migration State</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></aside>
+
+<p>VMware&rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:</p>
+<ol>
+<li>Migrate Virtual Machine from source datacenter to AVS</li>
+<li>Migrate Network segment from source datacenter to AVS</li>
+</ol>
+<p>In this article we&rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.</p>
+<h2 id="network-migration-states">Network Migration States</h2>
+<p>We&rsquo;ll explore the transition with the following states:</p>
+<ol>
+<li><b>Initial State:</b> where source datacenter has network connection to AVS private cloud.</li>
+<li><b>Intermediate Network Extension State:</b> where a layer 2 network segment has been extended to AVS.</li>
+<li><b>Intermediate Optimized Local Routing State (Optional):</b> where local smart routing is enabled within AVS.</li>
+<li><b>Final Network Migration State:</b> where network gateway is migrated to AVS.</li>
+</ol>
+<h3 id="initial-state">Initial State</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1M85_3wtcGzbv-L35dKiYNfUVhSa1eEG9" alt="Initial State"></p>
+<ul>
+<li>On-Prem
+<ul>
+<li>Routing advertisement subnet: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+</ul>
+</li>
+<li>AVS
+<ul>
+<li>Routing advertisement subnet: 10.20.20.0/24</li>
+<li>Network gateway: 10.20.20.1</li>
+</ul>
+</li>
+<li>HCX
+<ul>
+<li>Administrator action: deploy HCX</li>
+</ul>
+</li>
+</ul>
+<h3 id="intermediate-network-extension-state">Intermediate Network Extension State</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1vsob29dWFPzX1MBOmQ3-KSo90hkYf3RI" alt="Intermediate State"></p>
+<ul>
+<li>On-Prem
+<ul>
+<li>Routing advertisement subnet: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+</ul>
+</li>
+<li>AVS
+<ul>
+<li>Routing advertisement subnet: 10.20.20.0/24</li>
+<li>Network gateway: 10.20.20.1</li>
+</ul>
+</li>
+<li>HCX
+<ul>
+<li>Network extension: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+<li>Network gateway location: On-Prem</li>
+<li>Mobility optimized networking: not enabled</li>
+<li>AVS NSX-T1 segment attachment: not enabled</li>
+<li>Administrator action: extend 10.10.10.0/24 network to AVS</li>
+<li>Administrator action: migrate all VMs in 10.10.10.0/24 network to extended network in AVS</li>
+</ul>
+</li>
+</ul>
+<h3 id="intermediate-optimized-local-routing-state-optional">Intermediate Optimized Local Routing State (Optional)</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Vji5FzRgFusea12bPAzcd-n96y2KoOml" alt="Intermediate Optional State"></p>
+<ul>
+<li>On-Prem
+<ul>
+<li>Routing advertisement subnet: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+</ul>
+</li>
+<li>AVS
+<ul>
+<li>Routing advertisement subnet: 10.20.20.0/24</li>
+<li>Network gateway: 10.20.20.1</li>
+<li>Routing advertisement subnet: 10.10.10.13/32</li>
+</ul>
+</li>
+<li>HCX
+<ul>
+<li>Network extension: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+<li>Network gateway location: On-Prem</li>
+<li>Mobility optimized networking: enabled</li>
+<li>AVS NSX-T1 segment attachment: enabled</li>
+<li>AVS NSX-T1 VM attachement: 10.10.10.13</li>
+<li>Administrator action: enable MON on extended network and also on all VMs in extended network</li>
+</ul>
+</li>
+</ul>
+<h3 id="final-network-migration-state">Final Network Migration State</h3>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1jgppwYmhbrq996EI06SZT2TvS4zpGGlq" alt="Final State"></p>
+<ul>
+<li>On-Prem
+<ul>
+<li>Routing advertisement: None</li>
+<li>Network gateway: None</li>
+<li>Administrator action: delete GW 10.10.10.1 from local router</li>
+</ul>
+</li>
+<li>AVS
+<ul>
+<li>Routing advertisement subnet: 10.20.20.0/24</li>
+<li>Routing advertisement subnet: 10.10.10.0/24</li>
+<li>Network gateway: 10.10.10.1</li>
+<li>Network gateway: 10.20.20.1</li>
+</ul>
+</li>
+<li>HCX
+<ul>
+<li>Administrator action: unextend 10.10.10.0/24 network</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.vmware.com/en/VMware-HCX/4.5/hcx-user-guide/GUID-0C746416-850E-46F7-85DD-4D4326A23785.html">Network Extension Requirement</a></li>
+<li><a href="https://docs.vmware.com/en/VMware-HCX/4.5/hcx-user-guide/GUID-DBDB4D1B-60B6-4D16-936B-4AC632606909.html">Network Extension Restrictions</a></li>
+</ul>
+<div class="edit-meta">
+Last updated on 6 Feb 2023
+
+
+<br>
+Published on 6 Feb 2023
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/" title="HCX On-Prem Connector OVA Download"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - HCX On-Prem Connector OVA Download</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/" title="DR with VMware Site Recovery (SRM)">Next - DR with VMware Site Recovery (SRM) <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_internet_access/">AVS Internet Access Architecture Options</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/hcx/">Migration with VMware Hybrid Cloud Extension (HCX)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/">HCX On-Prem Connector OVA Download</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/">Migrate Network with HCX</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/srm/">DR with VMware Site Recovery (SRM)</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application DR architecture keeping same IP</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, and Backup Architecture</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

@@ -47,12 +47,24 @@ open browser to cloud HCX manager Use the IP, username and password gathered fro
     </item>
     
     <item>
+      <title>Migrate Network with HCX</title>
+      <link>https://sjainout.github.io/cloud/hcx/hcx_network_migrate/</link>
+      <pubDate>Mon, 06 Feb 2023 17:39:04 -0500</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/hcx/hcx_network_migrate/</guid>
+      <description>VMware&amp;rsquo;s Hybrid Cloud eXtension (HCX) platform can be used to:
+Migrate Virtual Machine from source datacenter to AVS Migrate Network segment from source datacenter to AVS In this article we&amp;rsquo;ll explore steps which can be taken to seemlessly migrate network from VMware based source datacenter over to AVS.
+Network Migration States We&amp;rsquo;ll explore the transition with the following states:
+Initial State: where source datacenter has network connection to AVS private cloud.</description>
+    </item>
+    
+    <item>
       <title>HA, DR, and Backup Architecture</title>
       <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
       <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</guid>
-      <description>High Availability, DR and Backup Steady State Application Requirement and Data synchronization platform Tier 0
+      <description>Steady State Application Requirement and Data synchronization platform Tier 0
 Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
 RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
 RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3</description>
