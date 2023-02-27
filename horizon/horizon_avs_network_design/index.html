@@ -3,10 +3,10 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>AVS NSXT NVA Architectures - Cloud 101 Site</title>
+<title>Horizon AVS Network Designs - Cloud 101 Site</title>
 <meta name="generator" content="Hugo 0.101.0" />
 <link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">
+<link rel="canonical" href="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/">
 <link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
 <link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
 <script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
@@ -16,23 +16,20 @@
 <script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="AVS NSXT NVA Architectures" />
-<meta property="og:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones." />
+<meta property="og:title" content="Horizon AVS Network Designs" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/" /><meta property="article:section" content="AVS" />
-<meta property="article:published_time" content="2022-07-22T16:13:18-04:00" />
-<meta property="article:modified_time" content="2022-07-22T16:13:18-04:00" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/" /><meta property="article:section" content="HORIZON" />
+<meta property="article:published_time" content="2023-02-27T10:16:52-05:00" />
+<meta property="article:modified_time" content="2023-02-27T10:16:52-05:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AVS NSXT NVA Architectures"/>
-<meta name="twitter:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones."/>
-<meta itemprop="name" content="AVS NSXT NVA Architectures">
-<meta itemprop="description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones."><meta itemprop="datePublished" content="2022-07-22T16:13:18-04:00" />
-<meta itemprop="dateModified" content="2022-07-22T16:13:18-04:00" />
-<meta itemprop="wordCount" content="112">
+<meta name="twitter:title" content="Horizon AVS Network Designs"/>
+<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="Horizon AVS Network Designs">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-02-27T10:16:52-05:00" />
+<meta itemprop="dateModified" content="2023-02-27T10:16:52-05:00" />
+<meta itemprop="wordCount" content="0">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -50,30 +47,19 @@ Here, NVA has to be in routed path, where, it acts as network gateway for the la
 </div>
 
 <div class="content-container">
-<main><h1>AVS NSXT NVA Architectures</h1>
-<p>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).</p>
-<p><img src="http://drive.google.com/uc?export=view&amp;id=1gfYk5iWTVkJ2oGartkNpmMAY5SUsP2WS" alt="AVS NVA Architecture Choices"></p>
-<ul>
-<li>Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment.</li>
-<li>From scale point of view, ESXi supports 10 network interfaces per VM.
-<ul>
-<li>1 interface can be used for uplink</li>
-<li>1 for management</li>
-<li>8 segments are then left to create security zones.</li>
-</ul>
-</li>
-<li>Security zone in these options can either be &lsquo;a segment&rsquo; or &lsquo;an isolated NSX-T T1 gateway&rsquo;</li>
-<li>On the NSX-T T1, configure a summary static route for all the south-bound segments with next hop set to NVA.</li>
-</ul>
-<hr>
+<main><h1>Horizon AVS Network Designs</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents"></nav></aside>
+
+<p><img src="http://drive.google.com/uc?export=view&amp;id=13N3MH88j-8ZGK1ZNa4l-WYkpMtJ-Zjln" alt="Horizon AVS Architecture"></p>
 <div class="edit-meta">
-Last updated on 22 Jul 2022
+Last updated on 27 Feb 2023
 
 
 <br>
-Published on 22 Jul 2022
-<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/avs/avs_internet_access/" title="AVS Internet Access Architecture Options"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - AVS Internet Access Architecture Options</a>
-<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/avs_reservation/" title="AVS Reservation">Next - AVS Reservation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+Published on 27 Feb 2023
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/horizon/" title="Horizon Virtual Desktop in AVS"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Horizon Virtual Desktop in AVS</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/avs/" title="Azure VMware Solution">Next - Azure VMware Solution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -83,11 +69,11 @@ Published on 22 Jul 2022
 <ul>
 <li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
 
-<li class="parent"><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
   
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/avs/avs_internet_access/">AVS Internet Access Architecture Options</a></li>
-<li class="active"><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
 </ul>
   
@@ -113,10 +99,10 @@ Published on 22 Jul 2022
   
 </li>
 
-<li class=""><a href="https://sjainout.github.io/cloud/horizon/">Horizon Virtual Desktop in AVS</a>
+<li class="parent"><a href="https://sjainout.github.io/cloud/horizon/">Horizon Virtual Desktop in AVS</a>
   
 <ul class="sub-menu">
-<li class=""><a href="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/">Horizon AVS Network Designs</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/">Horizon AVS Network Designs</a></li>
 </ul>
   
 </li>
