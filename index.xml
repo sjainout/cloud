@@ -13,7 +13,10 @@
       <pubDate>Mon, 27 Feb 2023 10:16:52 -0500</pubDate>
       
       <guid>https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/</guid>
-      <description></description>
+      <description>Horizon AVS Network Design Options Premise: Horizon in AVS uses hybrid architecture, where,
+Horizon shared services are installed in Azure vNet Horizon desktops are installed in AVS This post covers only the following designs:
+Horizon desktop access Internet via vNet Horizon desktop access Internet directly via AVS Horizon desktop access Internet via vNet AVS Network Connections:
+AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:</description>
     </item>
     
     <item>
@@ -35,7 +38,7 @@
     </item>
     
     <item>
-      <title>Application DR architecture keeping same IP</title>
+      <title>Application-DR Architecture</title>
       <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
       <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
       
@@ -68,7 +71,7 @@ Initial State: where source datacenter has network connection to AVS private clo
     </item>
     
     <item>
-      <title>HA, DR, and Backup Architecture</title>
+      <title>HA, DR, plus Backup Architecture</title>
       <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
       <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
       

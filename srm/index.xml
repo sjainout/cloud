@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DR with VMware Site Recovery (SRM) on Cloud 101 Site</title>
+    <title>Disaster Recovery on Cloud 101 Site</title>
     <link>https://sjainout.github.io/cloud/srm/</link>
-    <description>Recent content in DR with VMware Site Recovery (SRM) on Cloud 101 Site</description>
+    <description>Recent content in Disaster Recovery on Cloud 101 Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Jul 2022 11:48:08 -0400</lastBuildDate><atom:link href="https://sjainout.github.io/cloud/srm/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>Application DR architecture keeping same IP</title>
+      <title>Application-DR Architecture</title>
       <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
       <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>HA, DR, and Backup Architecture</title>
+      <title>HA, DR, plus Backup Architecture</title>
       <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
       <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
       

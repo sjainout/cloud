@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Application DR architecture keeping same IP - Cloud 101 Site</title>
+<title>Application-DR Architecture - Cloud 101 Site</title>
 <meta name="generator" content="Hugo 0.101.0" />
 <link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
 <link rel="canonical" href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">
@@ -16,7 +16,7 @@
 <script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="Application DR architecture keeping same IP" />
+<meta property="og:title" content="Application-DR Architecture" />
 <meta property="og:description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/" /><meta property="article:section" content="SRM" />
@@ -24,9 +24,9 @@
 <meta property="article:modified_time" content="2022-07-26T13:20:25-04:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Application DR architecture keeping same IP"/>
+<meta name="twitter:title" content="Application-DR Architecture"/>
 <meta name="twitter:description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) "/>
-<meta itemprop="name" content="Application DR architecture keeping same IP">
+<meta itemprop="name" content="Application-DR Architecture">
 <meta itemprop="description" content="DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) "><meta itemprop="datePublished" content="2022-07-26T13:20:25-04:00" />
 <meta itemprop="dateModified" content="2022-07-26T13:20:25-04:00" />
 <meta itemprop="wordCount" content="124">
@@ -47,7 +47,7 @@
 </div>
 
 <div class="content-container">
-<main><h1>Application DR architecture keeping same IP</h1>
+<main><h1>Application-DR Architecture</h1>
 <aside class="table_of_contents">
 <h5>Table of Contents</h5><nav id="TableOfContents">
   <ul>
@@ -102,7 +102,7 @@ Last updated on 26 Jul 2022
 <br>
 Published on 26 Jul 2022
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/srm/srm_avs_install/" title="SRM AVS Install"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - SRM AVS Install</a>
-<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/" title="HA, DR, and Backup Architecture">Next - HA, DR, and Backup Architecture <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/" title="HA, DR, plus Backup Architecture">Next - HA, DR, plus Backup Architecture <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -122,7 +122,7 @@ Published on 26 Jul 2022
   
 </li>
 
-<li class=""><a href="https://sjainout.github.io/cloud/hcx/">Migration with VMware Hybrid Cloud Extension (HCX)</a>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/">Migration</a>
   
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
@@ -132,12 +132,12 @@ Published on 26 Jul 2022
   
 </li>
 
-<li class="parent"><a href="https://sjainout.github.io/cloud/srm/">DR with VMware Site Recovery (SRM)</a>
+<li class="parent"><a href="https://sjainout.github.io/cloud/srm/">Disaster Recovery</a>
   
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
-<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application DR architecture keeping same IP</a></li>
-<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, and Backup Architecture</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application-DR Architecture</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, plus Backup Architecture</a></li>
 </ul>
   
 </li>
