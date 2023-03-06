@@ -20,7 +20,7 @@
 <meta property="og:description" content="Horizon AVS Network Design Options Premise: Horizon in AVS uses hybrid architecture, where,
 Horizon shared services are installed in Azure vNet Horizon desktops are installed in AVS This post covers only the following designs:
 Horizon desktop access Internet via vNet Horizon desktop access Internet directly via AVS Horizon desktop access Internet via vNet AVS Network Connections:
-AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:" />
+On-prem to Azure region using WAN Express Route AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/" /><meta property="article:section" content="HORIZON" />
 <meta property="article:published_time" content="2023-02-27T10:16:52-05:00" />
@@ -31,14 +31,14 @@ AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Expres
 <meta name="twitter:description" content="Horizon AVS Network Design Options Premise: Horizon in AVS uses hybrid architecture, where,
 Horizon shared services are installed in Azure vNet Horizon desktops are installed in AVS This post covers only the following designs:
 Horizon desktop access Internet via vNet Horizon desktop access Internet directly via AVS Horizon desktop access Internet via vNet AVS Network Connections:
-AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:"/>
+On-prem to Azure region using WAN Express Route AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:"/>
 <meta itemprop="name" content="Horizon AVS Network Designs">
 <meta itemprop="description" content="Horizon AVS Network Design Options Premise: Horizon in AVS uses hybrid architecture, where,
 Horizon shared services are installed in Azure vNet Horizon desktops are installed in AVS This post covers only the following designs:
 Horizon desktop access Internet via vNet Horizon desktop access Internet directly via AVS Horizon desktop access Internet via vNet AVS Network Connections:
-AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:"><meta itemprop="datePublished" content="2023-02-27T10:16:52-05:00" />
+On-prem to Azure region using WAN Express Route AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Express Route circuit Azure Network Connections:"><meta itemprop="datePublished" content="2023-02-27T10:16:52-05:00" />
 <meta itemprop="dateModified" content="2023-02-27T10:16:52-05:00" />
-<meta itemprop="wordCount" content="577">
+<meta itemprop="wordCount" content="585">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -81,9 +81,10 @@ AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Expres
 <li>Horizon desktop access Internet directly via AVS</li>
 </ol>
 <h3 id="horizon-desktop-access-internet-via-vnet">Horizon desktop access Internet via vNet</h3>
-<p><img src="http://drive.google.com/uc?export=view&amp;id=15YKOHxLV_GwveK-BEjGRi64MvJFW1DQc" alt="Horizon AVS Architecture 2"></p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=12hguLLSWgzYNhy8BacJCR43MLOtJn7GZ" alt="Horizon AVS Architecture 2"></p>
 <p>AVS Network Connections:</p>
 <ol>
+<li>On-prem to Azure region using WAN Express Route</li>
 <li>AVS to On-Prem using Express Route Global Reach</li>
 <li>AVS to Hub vNet via local Express Route circuit</li>
 </ol>
@@ -104,6 +105,7 @@ AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Expres
 <li>vNet peering connection to Infrastructure shared services vNet</li>
 </ol>
 <p>Traffic flows:</p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1jgRzs6QQZm0l7ei9nYMZw4cNtF37OTdc" alt="Horizon AVS Flows 1"></p>
 <ol>
 <li>On-prem end-user access &gt; WAN Express Route &gt; Hub vNet &gt; Horizon spoke vNet &gt; Horizon Connection Server</li>
 <li>Internet end-user access &gt; vNet NVA &gt; vNet Peering &gt; Horizon vNet &gt; Load Balancer &gt; UAG</li>
@@ -116,7 +118,7 @@ AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Expres
 <li>Horizon desktop &gt; AVS express route to hub vNet &gt; NVA &gt; Internet site</li>
 </ol>
 <h3 id="horizon-desktop-access-internet-directly-via-avs">Horizon desktop access Internet directly via AVS</h3>
-<p><img src="http://drive.google.com/uc?export=view&amp;id=17Hl0-dSJoMI0h_MZaQkOZqhzvubKEtgh" alt="Horizon AVS Architecture 1"></p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1uRBtqmggCjnw8eV3Rluef_yMKRTpgUc8" alt="Horizon AVS Architecture 2"></p>
 <p>AVS Network Connections:</p>
 <ol>
 <li>AVS to On-Prem using Express Route Global Reach</li>
@@ -138,6 +140,7 @@ AVS to On-Prem using Express Route Global Reach AVS to Hub vNet via local Expres
 <li>vNet peering connection to Infrastructure shared services vNet</li>
 </ol>
 <p>Traffic flows:</p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Qx4G9YS901cePFJ6lTMakbguNscLYcEL" alt="Horizon AVS Flows 2"></p>
 <ol>
 <li>On-prem end-user access &gt; WAN Express Route &gt; Hub vNet &gt; Horizon spoke vNet &gt; Horizon Connection Server</li>
 <li>Internet end-user access &gt; vNet NVA &gt; vNet Peering &gt; Horizon vNet &gt; Load Balancer &gt; UAG</li>
