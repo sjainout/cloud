@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Migrate VM and Network Lab Demo - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Migrate VM and Network Lab Demo" />
+<meta property="og:description" content="This document covers lab demo covering following sequence of scenarios:
+Extend network from on-prem to AVS Migrate VM from on-prem to AVS Enable Mobility Optimized Networking in AVS Migrate network segment in AVS Management Lab environment is setup with following:
+Express Route connection between on-prem (Chicago) and AVS (Azure USA West region) HCX deployment on-prem and AVS HCX site pair between on-prem and AVS Network Extension Demo video contains the following:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/" /><meta property="article:section" content="HCX" />
+<meta property="article:published_time" content="2023-03-13T10:17:35-04:00" />
+<meta property="article:modified_time" content="2023-03-13T10:17:35-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Migrate VM and Network Lab Demo"/>
+<meta name="twitter:description" content="This document covers lab demo covering following sequence of scenarios:
+Extend network from on-prem to AVS Migrate VM from on-prem to AVS Enable Mobility Optimized Networking in AVS Migrate network segment in AVS Management Lab environment is setup with following:
+Express Route connection between on-prem (Chicago) and AVS (Azure USA West region) HCX deployment on-prem and AVS HCX site pair between on-prem and AVS Network Extension Demo video contains the following:"/>
+<meta itemprop="name" content="Migrate VM and Network Lab Demo">
+<meta itemprop="description" content="This document covers lab demo covering following sequence of scenarios:
+Extend network from on-prem to AVS Migrate VM from on-prem to AVS Enable Mobility Optimized Networking in AVS Migrate network segment in AVS Management Lab environment is setup with following:
+Express Route connection between on-prem (Chicago) and AVS (Azure USA West region) HCX deployment on-prem and AVS HCX site pair between on-prem and AVS Network Extension Demo video contains the following:"><meta itemprop="datePublished" content="2023-03-13T10:17:35-04:00" />
+<meta itemprop="dateModified" content="2023-03-13T10:17:35-04:00" />
+<meta itemprop="wordCount" content="188">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="horizon doc" class=""><a href="https://docs.vmware.com/en/VMware-Horizon/index.html">Horizon Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Migrate VM and Network Lab Demo</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#management">Management</a></li>
+    <li><a href="#network-extension">Network Extension</a></li>
+    <li><a href="#vm-migration">VM Migration</a></li>
+    <li><a href="#mobility-optimized-networking">Mobility Optimized Networking</a></li>
+    <li><a href="#network-migration">Network Migration</a></li>
+  </ul>
+</nav></aside>
+
+<p>This document covers lab demo covering following sequence of scenarios:</p>
+<ol>
+<li>Extend network from on-prem to AVS</li>
+<li>Migrate VM from on-prem to AVS</li>
+<li>Enable Mobility Optimized Networking in AVS</li>
+<li>Migrate network segment in AVS</li>
+</ol>
+<h2 id="management">Management</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=16tXD5-uua5gsFJIQkqIKVSJ3AqizNu0y" alt="1 Management Lab"></p>
+<p>Lab environment is setup with following:</p>
+<ul>
+<li>Express Route connection between on-prem (Chicago) and AVS (Azure USA West region)</li>
+<li>HCX deployment on-prem and AVS</li>
+<li>HCX site pair between on-prem and AVS</li>
+</ul>
+<h2 id="network-extension">Network Extension</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Z1yILuMLMbZG6GmencXPi-d4OA_Cmgmc" alt="2 Network Extension Lab"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Extend vlan 1193 from on-prem to AVS</li>
+<li>Use on-prem gateway as default</li>
+</ul>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/kCOBz-vjIFU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="vm-migration">VM Migration</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=14OqFKHI77okIAAuHRSNCXp5exXdovePq" alt="3 VM Migration Lab"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Migrate VM from on-prem to AVS</li>
+<li>Test reachability to on-prem GW and other VM in same AVS</li>
+<li>Check AVS NSX-T settings</li>
+</ul>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/0wI2IqQ4jg0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="mobility-optimized-networking">Mobility Optimized Networking</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=15Guj9_WFtEw2o4M4hOxNA1uwe5JUiMGp" alt="4 MON Lab"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Enable HCX mobility optimized networking for extended vlan</li>
+<li>Test reachability to on-prem GW and other VM in same AVS</li>
+<li>Check AVS NSX-T settings</li>
+</ul>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/sKXUVZjblOo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="network-migration">Network Migration</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=18XYNsMYXaOF0WWSx-jazxP7UKRzd6rTP" alt="4 Network Migration Lab"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Unextend network segment in AVS to convert it to local layer 3 segment</li>
+<li>Test reachability to on-prem GW and other VM in same AVS</li>
+<li>Check NSX-T routes</li>
+</ul>
+<p>Additional step required:</p>
+<ul>
+<li>Manually remove on-prem GW configuration (not shown in video)</li>
+</ul>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/v5S8Aiubql0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<div class="edit-meta">
+Last updated on 13 Mar 2023
+
+
+<br>
+Published on 13 Mar 2023
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/" title="Migrate Network with HCX"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Migrate Network with HCX</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/srm/" title="Disaster Recovery">Next - Disaster Recovery <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_internet_access/">AVS Internet Access Architecture Options</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/hcx/">Migration</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/">HCX On-Prem Connector OVA Download</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/">Migrate Network with HCX</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/">Migrate VM and Network Lab Demo</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/srm/">Disaster Recovery</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application-DR Architecture</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, plus Backup Architecture</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/horizon/">Horizon Virtual Desktop in AVS</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/">Horizon AVS Network Designs</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
