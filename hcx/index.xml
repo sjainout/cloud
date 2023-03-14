@@ -41,14 +41,14 @@ Initial State: where source datacenter has network connection to AVS private clo
     </item>
     
     <item>
-      <title>Migrate VM and Network Lab Demo</title>
+      <title>Migrate VM and Network - Lab Demo</title>
       <link>https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/</link>
       <pubDate>Mon, 13 Mar 2023 10:17:35 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/</guid>
-      <description>This document covers lab demo covering following sequence of scenarios:
-Extend network from on-prem to AVS Migrate VM from on-prem to AVS Enable Mobility Optimized Networking in AVS Migrate network segment in AVS Management Lab environment is setup with following:
-Express Route connection between on-prem (Chicago) and AVS (Azure USA West region) HCX deployment on-prem and AVS HCX site pair between on-prem and AVS Network Extension Demo video contains the following:</description>
+      <description>This document covers lab demo covering following sequence of steps:
+Extend network from on-prem to AVS Migrate VM from on-prem to AVS Enable Mobility Optimized Networking in AVS Migrate network segment in AVS Management Lab environment has been setup with the following:
+Express Route connection between on-prem (Chicago) and AVS (Azure USA West region) HCX deployment in both on-prem and AVS HCX site pair between on-prem and AVS Network Extension Demo video contains the following:</description>
     </item>
     
   </channel>
