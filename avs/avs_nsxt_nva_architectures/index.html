@@ -18,7 +18,7 @@
 </style>
 <meta property="og:title" content="AVS NSXT NVA Architectures" />
 <meta property="og:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones." />
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 1 for ha 7 segments are then left to create security zones." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/" /><meta property="article:section" content="AVS" />
 <meta property="article:published_time" content="2022-07-22T16:13:18-04:00" />
@@ -27,12 +27,12 @@ Here, NVA has to be in routed path, where, it acts as network gateway for the la
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AVS NSXT NVA Architectures"/>
 <meta name="twitter:description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones."/>
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 1 for ha 7 segments are then left to create security zones."/>
 <meta itemprop="name" content="AVS NSXT NVA Architectures">
 <meta itemprop="description" content="Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones."><meta itemprop="datePublished" content="2022-07-22T16:13:18-04:00" />
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 1 for ha 7 segments are then left to create security zones."><meta itemprop="datePublished" content="2022-07-22T16:13:18-04:00" />
 <meta itemprop="dateModified" content="2022-07-22T16:13:18-04:00" />
-<meta itemprop="wordCount" content="112">
+<meta itemprop="wordCount" content="133">
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Cloud 101 Site</h1>
@@ -52,18 +52,20 @@ Here, NVA has to be in routed path, where, it acts as network gateway for the la
 <div class="content-container">
 <main><h1>AVS NSXT NVA Architectures</h1>
 <p>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&rsquo;s point of view it is just another Virtual Machine (VM).</p>
-<p><img src="http://drive.google.com/uc?export=view&amp;id=1gfYk5iWTVkJ2oGartkNpmMAY5SUsP2WS" alt="AVS NVA Architecture Choices"></p>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1CpaRtwfM90TPlj36ZfCAeaDCq645Fm4O" alt="AVS NVA Architecture Choices"></p>
 <ul>
 <li>Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment.</li>
 <li>From scale point of view, ESXi supports 10 network interfaces per VM.
 <ul>
 <li>1 interface can be used for uplink</li>
 <li>1 for management</li>
-<li>8 segments are then left to create security zones.</li>
+<li>1 for ha</li>
+<li>7 segments are then left to create security zones.</li>
 </ul>
 </li>
 <li>Security zone in these options can either be &lsquo;a segment&rsquo; or &lsquo;an isolated NSX-T T1 gateway&rsquo;</li>
-<li>On the NSX-T T1, configure a summary static route for all the south-bound segments with next hop set to NVA.</li>
+<li>On the main NSX-T T1, configure a summary static route for all the south-bound segments with next hop set to NVA.</li>
+<li>On the isolated NSX-T T1s, configure default static route using 0.0.0.0/1, 128.0.0.0/1 with NVA as the next-hop.</li>
 </ul>
 <hr>
 <div class="edit-meta">
@@ -108,8 +110,8 @@ Published on 22 Jul 2022
   
 <ul class="sub-menu">
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
-<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application-DR Architecture</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, plus Backup Architecture</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application DR Architecture</a></li>
 <li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/">Application DR - Lab Demo</a></li>
 </ul>
   

@@ -25,7 +25,11 @@ On-prem to Azure region using WAN Express Route AVS to On-Prem using Express Rou
       <pubDate>Thu, 21 Jul 2022 11:41:29 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/srm/srm_avs_install/</guid>
-      <description>Deployment Information AVS DR w/ VMware&amp;rsquo;s SRM Installation Information</description>
+      <description>AVS side DR AVS DR w/ VMware&amp;rsquo;s SRM Installation Information
+On-Prem side DR vSphere Replication install guide
+Site Recovery Manager (SRM) network ports
+Site Recovery Manager (SRM) network ports - alternate view
+SRM appliance install guide</description>
     </item>
     
     <item>
@@ -34,16 +38,20 @@ On-prem to Azure region using WAN Express Route AVS to On-Prem using Express Rou
       <pubDate>Wed, 20 Jul 2022 22:33:23 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/hcx/hcx_avs_install/</guid>
-      <description>Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for each Interconnect Appliance 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance to participate in vMotion (optional) DNS A record is needeed for on-prem HCX connector to map it’s static IP with it&amp;rsquo;s FQDN name Additional details which will be needed during deployment and configuration: vCenter URL PSC URL vCenter admin credentials DNS Server IP NTP Server IP Proxy Server (optional) Storage for HCX deployment Cluster w/ test workload VMs vDS w/ Port Group for L2 extension AVS HCX Manager Deployment AVS Side HCX Deployment</description>
+      <description>AVS side HCX Manager Deployment Information AVS HCX Deployment
+On-Prem side HCX Pre-Deployment Information Deployment details On-prem HCX install requirements On-prem HCX ports On-prem HCX IP requirements: 4x IP Addresses for HCX Appliances 3x management IPs 1x will be for the HCX Manager 1x will be for each Interconnect Appliance for Migration 1x will be for each Network Extension Appliance 1x vMotion IP for each Interconnect Appliance if vMotion network is isolated (optional) DNS A record is needeed for on-prem HCX connector to map it’s static IP with it&amp;rsquo;s FQDN name Additional details which will be needed during deployment and configuration: vCenter URL PSC URL vCenter admin credentials DNS Server IP NTP Server IP Proxy Server (optional) Storage for HCX deployment Cluster w/ test workload VMs vDS w/ Port Group for L2 extension (Optional) On-Prem NSX requirement for HCX deployment (Optional) Network Extension Requirement (Optional) Network Extension Restrictions </description>
     </item>
     
     <item>
-      <title>Application-DR Architecture</title>
-      <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
-      <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
+      <title>HA, DR, plus Backup Architecture</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
+      <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
       
-      <guid>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</guid>
-      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
+      <guid>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</guid>
+      <description>This document covers how the following three options can be used to protect applications:
+Application High Availability Disaster Recovery Backup Recovery Steady State Application Requirement and Data synchronization platform Tier 0
+Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
+RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2</description>
     </item>
     
     <item>
@@ -71,15 +79,12 @@ Initial State: where source datacenter has network connection to AVS private clo
     </item>
     
     <item>
-      <title>HA, DR, plus Backup Architecture</title>
-      <link>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</link>
-      <pubDate>Wed, 26 Oct 2022 09:56:17 -0400</pubDate>
+      <title>Application DR Architecture</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</link>
+      <pubDate>Tue, 26 Jul 2022 13:20:25 -0400</pubDate>
       
-      <guid>https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/</guid>
-      <description>Steady State Application Requirement and Data synchronization platform Tier 0
-Recovery Time Objective (RTO): 0; Recovery Point Objective (RPO): 0 Example: Shared services (Active Directory, Network Firewall, Load Balancer) Synchronization: Application platform-based replication (active-active) Storage: Integrated Tier 1
-RTO: minutes; RPO: seconds Example: Financial and Business critical applications Synchronization: Application platform-based replication (active-standby) Storage: Integrated (AV36) Tier 2
-RTO: hours; RPO: minutes Example: Production applications Synchronization: DR platform-based replication Storage: Integrated (AV36) Tier 3</description>
+      <guid>https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/</guid>
+      <description>DR steady state Protected site: On-Prem Recovery site: AVS DR Platform: VMware Site Recovery Protected VMs: 3 On-Prem VMs replicated in SRM Port Group (PG) Placeholder VMs: 3 AVS placeholder VMs created on recovery site and kept up to date DR Test DR test platform: Site Recovery Manager (SRM) DR test network: Isolated Segment in AVS DR Migration DR migration platform: Site Recovery Manager (SRM) Protected VMs: 3 On-Prem VMs will be shutdown Recovery VMs: 3 AVS VMs will be powered on Recovery VM network: Layer 2 extended network Network extension platform: HCX DR Event Protected Site: no longer available Recovery Site: AVS Recovery VMs: all VMs come up on AVS Recovery VM network: Layer 3 segment Recovery network platform: NSX-t (part of AVS) </description>
     </item>
     
     <item>
@@ -111,7 +116,9 @@ Express Route connection between on-prem (Chicago) and AVS (Azure USA West regio
       <pubDate>Fri, 22 Jul 2022 17:06:04 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/avs/avs_internet_access/</guid>
-      <description></description>
+      <description>There are 3 broad exit points for Internet access for VMs sitting inside of AVS:
+Directly from AVS From Azure Region From On-Prem Further subdividing the categories:
+Directly from AVS using SNAT using Public IP From Azure Region using Azure vWAN Hub with Global Reach using Azure vNet with Global Reach using Azure vWAN Hub without Global Reach using Azure vNet without Global Reach From On-Prem existing on-prem DMZ </description>
     </item>
     
     <item>
@@ -121,7 +128,7 @@ Express Route connection between on-prem (Chicago) and AVS (Azure USA West regio
       
       <guid>https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/</guid>
       <description>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&amp;rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones.</description>
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 1 for ha 7 segments are then left to create security zones.</description>
     </item>
     
     <item>

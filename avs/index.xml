@@ -13,7 +13,9 @@
       <pubDate>Fri, 22 Jul 2022 17:06:04 -0400</pubDate>
       
       <guid>https://sjainout.github.io/cloud/avs/avs_internet_access/</guid>
-      <description></description>
+      <description>There are 3 broad exit points for Internet access for VMs sitting inside of AVS:
+Directly from AVS From Azure Region From On-Prem Further subdividing the categories:
+Directly from AVS using SNAT using Public IP From Azure Region using Azure vWAN Hub with Global Reach using Azure vNet with Global Reach using Azure vWAN Hub without Global Reach using Azure vNet without Global Reach From On-Prem existing on-prem DMZ </description>
     </item>
     
     <item>
@@ -23,7 +25,7 @@
       
       <guid>https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/</guid>
       <description>Customer can deploy self-managed NVAs like FireWall, Loadbalancer, etc, inside of AVS Private Cloud. From NSX-T&amp;rsquo;s point of view it is just another Virtual Machine (VM).
-Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 8 segments are then left to create security zones.</description>
+Here, NVA has to be in routed path, where, it acts as network gateway for the layer 3 segment. From scale point of view, ESXi supports 10 network interfaces per VM. 1 interface can be used for uplink 1 for management 1 for ha 7 segments are then left to create security zones.</description>
     </item>
     
     <item>
