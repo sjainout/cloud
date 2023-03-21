@@ -38,7 +38,7 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
     </item>
     
     <item>
-      <title>Application DR Functional Demo</title>
+      <title>Application DR - Lab Demo</title>
       <link>https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/</link>
       <pubDate>Mon, 20 Mar 2023 18:56:03 -0400</pubDate>
       
