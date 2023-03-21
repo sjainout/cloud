@@ -83,6 +83,18 @@ RTO: hours; RPO: minutes Example: Production applications Synchronization: DR pl
     </item>
     
     <item>
+      <title>Application DR Functional Demo</title>
+      <link>https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/</link>
+      <pubDate>Mon, 20 Mar 2023 18:56:03 -0400</pubDate>
+      
+      <guid>https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/</guid>
+      <description>This document covers lab demo covering following sequence of steps:
+Protect application for disaster Test recovery application in isolated network Migrate application to recovery site Recover application and network on disaster Application Protection Demo video contains the following:
+Setup inventory parameters between protected and recovery sites. Setup Application Replication with RPO value. Application DR Test Demo video contains the following:
+Execute DR Test in isolated network environment at Recovery site. Verify application is still running in Protected site.</description>
+    </item>
+    
+    <item>
       <title>Migrate VM and Network - Lab Demo</title>
       <link>https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/</link>
       <pubDate>Mon, 13 Mar 2023 10:17:35 -0400</pubDate>

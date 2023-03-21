@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Application DR Functional Demo - Cloud 101 Site</title>
+<meta name="generator" content="Hugo 0.101.0" />
+<link href="https://sjainout.github.io/cloud//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://sjainout.github.io/cloud/css/chroma.min.css">
+<script defer src="https://sjainout.github.io/cloud//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://sjainout.github.io/cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Application DR Functional Demo" />
+<meta property="og:description" content="This document covers lab demo covering following sequence of steps:
+Protect application for disaster Test recovery application in isolated network Migrate application to recovery site Recover application and network on disaster Application Protection Demo video contains the following:
+Setup inventory parameters between protected and recovery sites. Setup Application Replication with RPO value. Application DR Test Demo video contains the following:
+Execute DR Test in isolated network environment at Recovery site. Verify application is still running in Protected site." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/" /><meta property="article:section" content="SRM" />
+<meta property="article:published_time" content="2023-03-20T18:56:03-04:00" />
+<meta property="article:modified_time" content="2023-03-20T18:56:03-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Application DR Functional Demo"/>
+<meta name="twitter:description" content="This document covers lab demo covering following sequence of steps:
+Protect application for disaster Test recovery application in isolated network Migrate application to recovery site Recover application and network on disaster Application Protection Demo video contains the following:
+Setup inventory parameters between protected and recovery sites. Setup Application Replication with RPO value. Application DR Test Demo video contains the following:
+Execute DR Test in isolated network environment at Recovery site. Verify application is still running in Protected site."/>
+<meta itemprop="name" content="Application DR Functional Demo">
+<meta itemprop="description" content="This document covers lab demo covering following sequence of steps:
+Protect application for disaster Test recovery application in isolated network Migrate application to recovery site Recover application and network on disaster Application Protection Demo video contains the following:
+Setup inventory parameters between protected and recovery sites. Setup Application Replication with RPO value. Application DR Test Demo video contains the following:
+Execute DR Test in isolated network environment at Recovery site. Verify application is still running in Protected site."><meta itemprop="datePublished" content="2023-03-20T18:56:03-04:00" />
+<meta itemprop="dateModified" content="2023-03-20T18:56:03-04:00" />
+<meta itemprop="wordCount" content="158">
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Cloud 101 Site</h1>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/cloud/">&nbsp;Home</a></li>
+<li id="avs doc" class=""><a href="https://docs.microsoft.com/en-us/azure/azure-vmware/">AVS Doc</a></li>
+<li id="hcx doc" class=""><a href="https://docs.vmware.com/en/VMware-HCX/index.html">HCX Doc</a></li>
+<li id="srm doc" class=""><a href="https://docs.vmware.com/en/VMware-Site-Recovery/index.html">SRM Doc</a></li>
+<li id="horizon doc" class=""><a href="https://docs.vmware.com/en/VMware-Horizon/index.html">Horizon Doc</a></li>
+<li id="about" class=""><a href="about">About</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Application DR Functional Demo</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#application-protection">Application Protection</a></li>
+    <li><a href="#application-dr-test">Application DR Test</a></li>
+    <li><a href="#application-dr-migrate">Application DR Migrate</a></li>
+    <li><a href="#application-and-network-recocery-on-disaster">Application and Network Recocery on Disaster</a></li>
+  </ul>
+</nav></aside>
+
+<p>This document covers lab demo covering following sequence of steps:</p>
+<ol>
+<li>Protect application for disaster</li>
+<li>Test recovery application in isolated network</li>
+<li>Migrate application to recovery site</li>
+<li>Recover application and network on disaster</li>
+</ol>
+<h2 id="application-protection">Application Protection</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1ZJnyt-fYayCK_oxUJ8af560tkhPFQLjD" alt="1 DR Protection Demo"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Setup inventory parameters between protected and recovery sites.</li>
+<li>Setup Application Replication with RPO value.</li>
+</ul>
+<br>
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/7yX_OOigqK4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="application-dr-test">Application DR Test</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1rPJ_y44pxZTeAin_tKfKUdvYvy7VbEzj" alt="2 DR Test Demo"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Execute DR Test in isolated network environment at Recovery site.</li>
+<li>Verify application is still running in Protected site.</li>
+</ul>
+<br>
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/1TN9fVynBVw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="application-dr-migrate">Application DR Migrate</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=1Nud28d6Jr_oxc8p4cvP0xvIgoP-X1Voz" alt="3 DR Migrate Demo"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Execute application DR Migration to Recovery site.</li>
+<li>Verify application can reach all the other VMs in Protected and Recovery sites.</li>
+<li>Reprotect application back to original Protected site.</li>
+</ul>
+<br>
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/z1M_KENmsgQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="application-and-network-recocery-on-disaster">Application and Network Recocery on Disaster</h2>
+<p><img src="http://drive.google.com/uc?export=view&amp;id=11KkQOVYzWSdkRhORfYgZ1D10lojTI5un" alt="4 DR Event Demo"></p>
+<p>Demo video contains the following:</p>
+<ul>
+<li>Assume Protected site is no longer reachable.</li>
+<li>Execute DR Event from SRM in Recovery site.</li>
+<li>Unextend the network from HCX in Recovery site.</li>
+<li>Verify application can reach all the other VMs in Recovery site.</li>
+</ul>
+<br>
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/yrdSzGZHjm0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<div class="edit-meta">
+Last updated on 20 Mar 2023
+
+
+<br>
+Published on 20 Mar 2023
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/" title="HA, DR, plus Backup Architecture"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - HA, DR, plus Backup Architecture</a>
+<a class="nav nav-next" href="https://sjainout.github.io/cloud/horizon/" title="Horizon Virtual Desktop in AVS">Next - Horizon Virtual Desktop in AVS <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://sjainout.github.io/cloud/">Home</a></li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/avs/">Azure VMware Solution</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_internet_access/">AVS Internet Access Architecture Options</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_nsxt_nva_architectures/">AVS NSXT NVA Architectures</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/avs/avs_reservation/">AVS Reservation</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/">Migration</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_avs_install/">HCX AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_on_prem_download/">HCX On-Prem Connector OVA Download</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_network_migrate/">Migrate Network with HCX</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/hcx/hcx_vm_network_migrate_demo/">Migrate VM and Network - Lab Demo</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://sjainout.github.io/cloud/srm/">Disaster Recovery</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_avs_install/">SRM AVS Install</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_hcx_same_ip_architecture/">Application-DR Architecture</a></li>
+<li class=""><a href="https://sjainout.github.io/cloud/srm/srm_dr_backup_architecture/">HA, DR, plus Backup Architecture</a></li>
+<li class="active"><a href="https://sjainout.github.io/cloud/srm/srm_dr_functions_demo/">Application DR Functional Demo</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://sjainout.github.io/cloud/horizon/">Horizon Virtual Desktop in AVS</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://sjainout.github.io/cloud/horizon/horizon_avs_network_design/">Horizon AVS Network Designs</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
